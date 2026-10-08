@@ -1,0 +1,83 @@
+- name: Extension Publish
+  # You may pin to the exact commit or the version.
+  # uses: creeperkatze/extension-publish@67710e469fb1db85eac50c0cfe18779f9de5bdfb
+  uses: creeperkatze/extension-publish@v1.0.12
+  with:
+    # OAuth2 client ID from Google Cloud Console. Required for Chrome Web Store publishing.
+
+    chrome-client-id: # optional
+    # OAuth2 client secret from Google Cloud Console. Required for Chrome Web Store publishing.
+
+    chrome-client-secret: # optional
+    # Long-lived OAuth2 refresh token used to obtain short-lived access tokens. Required for Chrome Web Store publishing.
+
+    chrome-refresh-token: # optional
+    # Publisher ID found in the Chrome Developer Dashboard under Publisher > Settings. Required for Chrome Web Store publishing.
+
+    chrome-publisher-id: # optional
+    # The extension item ID in the Chrome Web Store (e.g. "aapbdbdomjkkjkaonfhkkikfgjllcleb"). Required for Chrome Web Store publishing.
+
+    chrome-extension-id: # optional
+    # Path to the extension .zip file to upload to the Chrome Web Store. Required for Chrome Web Store publishing.
+
+    chrome-zip-path: # optional
+    # Whether to publish the extension after a successful upload. Set to "false" to only upload without publishing (e.g. for draft review).
+
+    chrome-publish: # optional, default is true
+    # Controls publication timing. - "DEFAULT_PUBLISH": publish immediately to all users. - "STAGED_PUBLISH": defer to a staged rollout controlled by chrome-deploy-percentage.
+
+    chrome-publish-type: # optional, default is DEFAULT_PUBLISH
+    # Percentage of users (0-100) to roll out to when using STAGED_PUBLISH. Ignored when chrome-publish-type is DEFAULT_PUBLISH.
+
+    chrome-deploy-percentage: # optional
+    # Attempt to bypass the Chrome Web Store review process if the item is eligible. Returns a validation error if the item still requires review.
+
+    chrome-skip-review: # optional, default is false
+    # AMO API key (issuer) obtained from addons.mozilla.org/developers/addon/api/key/. Required for Firefox Add-ons publishing.
+
+    firefox-api-key: # optional
+    # AMO API secret used to sign JWT tokens. Required for Firefox Add-ons publishing.
+
+    firefox-api-secret: # optional
+    # The add-on ID, slug, or GUID (e.g. "{your-addon@example.com}"). Required when publishing a new version of an existing add-on.
+
+    firefox-extension-id: # optional
+    # Path to the .xpi (or .zip) file to upload to Firefox Add-ons. Required for Firefox Add-ons publishing.
+
+    firefox-xpi-path: # optional
+    # Distribution channel for the uploaded file. - "listed": publicly listed on addons.mozilla.org, requires review. - "unlisted": self-distributed, available immediately without review.
+
+    firefox-channel: # optional, default is listed
+    # License slug applied to the new version (e.g. "mpl-2.0", "mit", "apache-2.0"). Required for listed add-ons. Ignored for unlisted.
+
+    firefox-license: # optional
+    # Internal notes for Mozilla reviewers. Not visible to users.
+
+    firefox-approval-notes: # optional
+    # Version-specific release notes shown to users on AMO. Supports a plain string or a JSON object keyed by locale (e.g. '{"en-US":"..."}').
+
+    firefox-release-notes: # optional
+    # Firefox desktop compatibility. Use "true" to support all versions, a single version string (e.g. "109.0") to set a minimum, or a comma-separated range (e.g. "109.0, 120.0") to set both a minimum and maximum.
+
+    firefox-compatibility-firefox: # optional
+    # Firefox for Android compatibility. Use "true" to support all versions, a single version string (e.g. "113.0") to set a minimum, or a comma-separated range (e.g. "113.0, 120.0") to set both a minimum and maximum.
+
+    firefox-compatibility-android: # optional
+    # API key from Partner Center (Publish API page). Required for Edge Add-ons publishing.
+
+    edge-api-key: # optional
+    # Client ID from Partner Center (Publish API page). Required for Edge Add-ons publishing.
+
+    edge-client-id: # optional
+    # Product ID (128-bit GUID) of the extension in Partner Center. Found in the Extension overview page or in the dashboard URL.
+
+    edge-product-id: # optional
+    # Path to the .zip file to upload to Microsoft Edge Add-ons. Required for Edge Add-ons publishing.
+
+    edge-zip-path: # optional
+    # Whether to publish the draft after a successful upload. Set to "false" to only upload the package without submitting for review.
+
+    edge-publish: # optional, default is true
+    # Certification notes for Microsoft reviewers.
+
+    edge-notes: # optional
